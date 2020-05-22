@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
   render() {
     return (
-      <button className="square" onClick={() => {alert('Du har klikket på et tal');
-      }}>
-        {this.props.nummer} 
+      <button 
+      className="square" 
+      onClick={() => this.setState({nummer: 'X'})}
+      >
+      {this.state.nummer} 
       </button>
     ); // ved at tilføje {this.props.nummer} kaldes den "prop" som er sat i Board.
   }
